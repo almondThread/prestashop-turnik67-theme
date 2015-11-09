@@ -35,10 +35,7 @@
 	<p class="alert alert-warning">{l s='Your new order was not accepted.'}</p>
 {else}
 	{if $productNumber}
-		<!-- Shopping Cart -->
 
-		{include file="$tpl_dir./shopping-cart.tpl"}
-		<!-- End Shopping Cart -->
 		{if $is_logged AND !$is_guest}
 			{include file="$tpl_dir./order-address.tpl"}
 		{else}
@@ -46,13 +43,17 @@
 			{include file="$tpl_dir./order-opc-new-account.tpl"}
 			<!-- END Create account / Guest account / Login block -->
 		{/if}
-		<!-- Carrier -->
-		{include file="$tpl_dir./order-carrier.tpl"}
-		<!-- END Carrier -->
-	
-		<!-- Payment -->
-		{include file="$tpl_dir./order-payment.tpl"}
-		<!-- END Payment -->
+		<div id="cart-carrier-payment" class="{if !$is_guest AND !$is_logged}unvisible{/if}">
+			<!-- Carrier -->
+			{include file="$tpl_dir./order-carrier.tpl"}
+			<!-- END Carrier -->
+			<!-- Shopping Cart -->
+			{include file="$tpl_dir./shopping-cart.tpl"}
+			<!-- End Shopping Cart -->	
+			<!-- Payment -->
+			{include file="$tpl_dir./order-payment.tpl"}
+			<!-- END Payment -->
+		</div>
 	{else}
 		{capture name=path}{l s='Your shopping cart'}{/capture}
 		<h2 class="page-heading">{l s='Your shopping cart'}</h2>
