@@ -65,6 +65,12 @@ $(document).ready(function(){
 			$('#submitAccount').attr({id : 'submitGuestAccount', name : 'submitGuestAccount'});
 			if (typeof bindUniform !=='undefined')
 				bindUniform();
+
+			// highlight account fields green if they are already filled 
+			$.each(['#customer_firstname', '#email', '#phone_mobile', '#address1'], function(index, id) {
+				validate_field(id)
+			});
+
 			//////
 			// End of Hack
 		}
@@ -181,6 +187,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			submitAccount();
 			if ($('#opc_delivery_methods').is(':visible')) {
+				$('#submitAccountBlock').hide();
 				$.scrollTo('#carrier_area', 1000);
 			}
 		});

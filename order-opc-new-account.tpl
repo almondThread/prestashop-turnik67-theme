@@ -348,7 +348,7 @@
 						<input type="hidden" name="alias_invoice" id="alias_invoice" value="{l s='My Invoice address'}" />
 					</div>
 					{$HOOK_CREATE_ACCOUNT_FORM}
-					<div class="submit opc-add-save clearfix">
+					<div id='submitAccountBlock' class="submit opc-add-save clearfix {if $is_guest OR $is_logged}unvisible{/if}">
 						<p class="required opc-required pull-right">
 							<sup>*</sup>{l s='Required field'}
 						</p>
