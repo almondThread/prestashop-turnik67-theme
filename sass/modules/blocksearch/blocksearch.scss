@@ -1,10 +1,20 @@
 @import "compass";
+@import "bootstrap";
 @import "theme_variables";
 #search_block_top {
-	padding-top: 50px;
+	@media (min-width: $screen-lg) {
+		padding-top: 7px;
+	}	
+	@media (max-width: $screen-lg) {
+		padding-top: 30px;
+	}
+	@media (max-width: $screen-sm) {
+		padding-top: 7px;
+	}
 	#searchbox {
 		float: left;
 		width: 100%;
+		margin-top: 8px;
 	}
 	.btn.button-search {
 		background: $dark-background;
@@ -79,4 +89,36 @@ form#searchbox {
 			margin-right:0;
 		}
 	}
+}
+
+
+/*****************************************************************************
+					Contacts layer block
+*****************************************************************************/
+.contacts-layer {
+	padding: 8px;
+	h2 {
+		color: #868686;
+	    text-shadow: 1px 1px 1px #dddddd;	
+	    display: inline;
+	    vertical-align: middle;
+	}
+	button {
+		@extend .btn-primary;
+		color: #fff;
+		background-color: #07b2e6;
+		border-color: #a6a6a6;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #06b7ec;
+			border-color: #088ab2;
+		}
+		margin-left: 5px;
+		padding: 4px;
+		display: inline;
+
+
+	}
+
 }

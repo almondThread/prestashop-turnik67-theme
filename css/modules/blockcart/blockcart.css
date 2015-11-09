@@ -3,8 +3,13 @@
 ********************************************************************/
 #header .shopping_cart {
   position: relative;
-  float: right;
-  padding-top: 50px; }
+  float: right; }
+  @media (max-width: 1200px) {
+    #header .shopping_cart {
+      padding-top: 20px; } }
+  @media (min-width: 1200px) {
+    #header .shopping_cart {
+      padding-top: 60px; } }
   #header .shopping_cart > a:first-child:after {
     content: "\f0d7";
     font-family: "FontAwesome";
@@ -162,7 +167,6 @@
 ********************************************************************/
 #header .cart_block {
   position: absolute;
-  top: 95px;
   right: 0;
   z-index: 100;
   display: none;
@@ -170,6 +174,12 @@
   background: #484848;
   color: #fff;
   width: 270px; }
+  @media (max-width: 1200px) {
+    #header .cart_block {
+      top: 65px; } }
+  @media (min-width: 1200px) {
+    #header .cart_block {
+      top: 105px; } }
   @media (max-width: 480px) {
     #header .cart_block {
       width: 100%; } }

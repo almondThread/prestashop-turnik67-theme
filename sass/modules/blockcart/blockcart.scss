@@ -6,7 +6,12 @@
 #header .shopping_cart {
 	position: relative;
 	float: right;
-	padding-top: 50px;
+	@media (max-width: $screen-lg) {
+		padding-top: 20px;
+	}
+	@media (min-width: $screen-lg) {
+		padding-top: 60px; 
+	}
 	> a:first-child {
 		&:after {
 			content: "\f0d7";
@@ -211,7 +216,6 @@
 #header {
 	.cart_block {
 		position: absolute;
-		top: 95px;
 		right: 0;
 		z-index: 100;
 		display: none;
@@ -219,6 +223,12 @@
 		background: #484848;
 		color: $light-text-color;
 		width: 270px;
+		@media (max-width: $screen-lg) {
+			top: 65px;
+		}
+		@media (min-width: $screen-lg) {
+			top: 105px;
+		}
 		@media (max-width: $screen-xs) {
 			width: 100%;
 		}

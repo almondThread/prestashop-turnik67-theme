@@ -586,9 +586,9 @@ pre {
 .col-sm-2,
 .col-sm-3,
 .col-sm-4,
-header .row #header_logo,
 .col-sm-5,
 .col-sm-6,
+header .row #header_logo,
 .col-sm-7,
 .col-sm-8,
 .col-sm-9,
@@ -601,6 +601,7 @@ header .row #header_logo,
 .col-md-4,
 .col-md-5,
 .col-md-6,
+header .row #header_logo,
 .col-md-7,
 .col-md-8,
 .col-md-9,
@@ -611,6 +612,7 @@ header .row #header_logo,
 .col-lg-2,
 .col-lg-3,
 .col-lg-4,
+header .row #header_logo,
 .col-lg-5,
 .col-lg-6,
 .col-lg-7,
@@ -681,9 +683,9 @@ header .row #header_logo,
   .col-sm-2,
   .col-sm-3,
   .col-sm-4,
-  header .row #header_logo,
   .col-sm-5,
   .col-sm-6,
+  header .row #header_logo,
   .col-sm-7,
   .col-sm-8,
   .col-sm-9,
@@ -700,13 +702,13 @@ header .row #header_logo,
   .col-sm-3 {
     width: 25%; }
 
-  .col-sm-4, header .row #header_logo {
+  .col-sm-4 {
     width: 33.33333%; }
 
   .col-sm-5 {
     width: 41.66667%; }
 
-  .col-sm-6 {
+  .col-sm-6, header .row #header_logo {
     width: 50%; }
 
   .col-sm-7 {
@@ -835,6 +837,7 @@ header .row #header_logo,
   .col-md-4,
   .col-md-5,
   .col-md-6,
+  header .row #header_logo,
   .col-md-7,
   .col-md-8,
   .col-md-9,
@@ -857,7 +860,7 @@ header .row #header_logo,
   .col-md-5 {
     width: 41.66667%; }
 
-  .col-md-6 {
+  .col-md-6, header .row #header_logo {
     width: 50%; }
 
   .col-md-7 {
@@ -993,6 +996,7 @@ header .row #header_logo,
   .col-lg-2,
   .col-lg-3,
   .col-lg-4,
+  header .row #header_logo,
   .col-lg-5,
   .col-lg-6,
   .col-lg-7,
@@ -1011,7 +1015,7 @@ header .row #header_logo,
   .col-lg-3 {
     width: 25%; }
 
-  .col-lg-4 {
+  .col-lg-4, header .row #header_logo {
     width: 33.33333%; }
 
   .col-lg-5 {
@@ -5760,7 +5764,7 @@ header {
           header .row #header_logo img {
             margin: 0 auto; } }
   @media (min-width: 767px) {
-    header .col-sm-4 + .col-sm-4 + .col-sm-4, header .row #header_logo + .col-sm-4 + .col-sm-4, header .row .col-sm-4 + #header_logo + .col-sm-4, header .row #header_logo + #header_logo + .col-sm-4, header .row .col-sm-4 + .col-sm-4 + #header_logo, header .row #header_logo + .col-sm-4 + #header_logo, header .row .col-sm-4 + #header_logo + #header_logo, header .row #header_logo + #header_logo + #header_logo {
+    header .col-sm-4 + .col-sm-4 + .col-sm-4 {
       float: right; } }
 
 .ie8 #header #header_logo {

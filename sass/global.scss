@@ -84,7 +84,9 @@ header {
 		}
 		#header_logo {
 			padding-top: 15px;
-			@extend .col-sm-4;
+			@extend .col-lg-4;
+			@extend .col-md-6;
+			@extend .col-sm-6;
 			@media (max-width: $screen-md) {
 				padding-top: 40px;
 			}
