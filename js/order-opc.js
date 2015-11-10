@@ -28,8 +28,8 @@ $(document).ready(function(){
 	{
 		if (guestCheckoutEnabled && !isLogged)
 		{
-			$('#opc_account_choice').show();
-			$('#opc_account_form, #opc_invoice_address').hide();
+			// $('#opc_account_choice').show();
+			// $('#opc_account_form, #opc_invoice_address').hide();
 
 			$(document).on('click', '#opc_createAccount',function(e){
 				e.preventDefault();
@@ -57,12 +57,12 @@ $(document).ready(function(){
 			// $('#carrier_area').hide();
 			// $('#opc_payment_methods').hide();
 
-			$('.is_customer_param').hide();
-			$('#opc_account_form').slideDown('slow');
-			$('#is_new_customer').val('0');
-			$('#opc_account_choice, #opc_invoice_address').hide();
-			$('#new_account_title').html(txtInstantCheckout);
-			$('#submitAccount').attr({id : 'submitGuestAccount', name : 'submitGuestAccount'});
+			// $('.is_customer_param').hide();
+			// $('#opc_account_form').slideDown('slow');
+			// $('#is_new_customer').val('0');
+			// $('#opc_account_choice, #opc_invoice_address').hide();
+			// $('#new_account_title').html(txtInstantCheckout);
+			// $('#submitAccount').attr({id : 'submitGuestAccount', name : 'submitGuestAccount'});
 			if (typeof bindUniform !=='undefined')
 				bindUniform();
 
@@ -153,33 +153,48 @@ $(document).ready(function(){
 
 
 		$(document).on('keypress', 'form#new_account_form .form-control', function(e) {
+
+			if ($('#submitAccountBlock').is(':visible')) {
+				return;
+			}
+
+			var interval = 500;
 			var form = $(this).closest("form");
-			var interval = 300;
 			form.attr('request_time', $.now());
 
-			setTimeout(function(form, interval) {
+			setTimeout(function(form, field, interval) {
 				request_time = form.attr('request_time');
 				// console.log(request_time, $.now() - request_time);
-
-				var fields_status = true;
-				$(form).find('input.form-control:visible').each(function(){
-					// var id = $(this).attr('id').trim();
-					// console.log(id);
-					var val = $(this).attr('value').trim();
-					fields_status = fields_status && val;
-				});
-
 				// console.log('fields_status = ', fields_status);
 
-				if (fields_status) {
-					if ($.now() - request_time > interval) {
+				// if we didn't press keys during interval (var interval = xxx)
+				if ($.now() - request_time > interval) {
+
+					validate_field(field);
+					if (field.closest('div.form-error')) {
+						// if current field is invalid
+						return;
+					}
+
+					var fields_status = true;
+					$(form).find('input.form-control:visible').each(function(){
+						// var id = $(this).attr('id').trim();
+						// console.log(id);
+						var val = $(this).attr('value').trim();
+						var valid = this.closest('div.form-ok')
+						// console.log(val + ': ' + valid + ' = ' + val && valid);
+						fields_status = fields_status && val && valid;
+					});
+
+					// when all fields are not empty and valid 
+					if (fields_status) {		
 						// console.log('Updating...');
 						// $('#submitAccount, #submitGuestAccount').click();
 						submitAccount();
 					}
 				}
 
-			}, interval, form, interval);
+			}, interval, form, this, interval);
 		});
 
 		// VALIDATION / CREATION AJAX
@@ -280,6 +295,7 @@ function submitAccount() {
 				var tmp = '';
 				var i = 0;
 				for(var error in jsonData.errors)
+					console.log(error + ': ' + jsonData.errors[error]);
 					//IE6 bug fix
 					if(error !== 'indexOf')
 					{

@@ -7,7 +7,7 @@
 		<fieldset>
 			<div class="box">
 
-				<div id="opc_account_form" class="unvisible">
+				<div id="opc_account_form" style="display: block;">
 					{$HOOK_CREATE_ACCOUNT_TOP}
 					<!-- Error return block -->
 					<div id="opc_account_errors" class="alert alert-danger" style="display:none;"></div>
@@ -34,7 +34,7 @@
 						<label for="email">{l s='Email'} <sup>*</sup></label>
 						<input type="email" class="text form-control validate" id="email" name="email" data-validate="isEmail" value="{if isset($guestInformations) && isset($guestInformations.email) && $guestInformations.email}{$guestInformations.email}{/if}" />
 					</div>
-					<div class="required password is_customer_param form-group">
+					<div class="required password is_customer_param unvisible form-group">
 						<label for="passwd">{l s='Password'} <sup>*</sup></label>
 						<input type="password" class="text form-control validate" name="passwd" id="passwd" data-validate="isPasswd" />
 						<span class="form_info">{l s='(five characters min.)'}</span>
@@ -146,7 +146,7 @@
 						<input type="text" class="text form-control validate" name="address1" id="address1" data-validate="isAddress" value="{if isset($guestInformations) && isset($guestInformations.address1) && isset($guestInformations) && isset($guestInformations.address1) && $guestInformations.address1}{$guestInformations.address1}{/if}" />
 					</div> -->
 					{elseif $field_name eq "address2"}
-					<!-- <div class="text{if !in_array($field_name, $required_fields)} is_customer_param{/if} form-group">
+					<!-- <div class="text{if !in_array($field_name, $required_fields)} is_customer_param unvisible{/if} form-group">
 						<label for="address2">{l s='Address (Line 2)'}{if in_array($field_name, $required_fields)} <sup>*</sup>{/if}</label>
 						<input type="text" class="text form-control validate" name="address2" id="address2" data-validate="isAddress" value="{if isset($guestInformations) && isset($guestInformations.address2) && isset($guestInformations) && isset($guestInformations.address2) && $guestInformations.address2}{$guestInformations.address2}{/if}" />
 					</div> -->
@@ -206,14 +206,14 @@
 						<span class="form_info">{l s='DNI / NIF / NIE'}</span>
 					</div>
 					{/if}
-					<div class="form-group is_customer_param">
+					<div class="form-group is_customer_param unvisible">
 						<label for="other">{l s='Additional information'}</label>
 						<textarea class="form-control" name="other" id="other" cols="26" rows="7"></textarea>
 					</div>
 					{if isset($one_phone_at_least) && $one_phone_at_least}
-						<p class="inline-infos required is_customer_param">{l s='You must register at least one phone number.'}</p>
+						<p class="inline-infos required is_customer_param unvisible">{l s='You must register at least one phone number.'}</p>
 					{/if}
-					<div class="form-group is_customer_param">
+					<div class="form-group is_customer_param unvisible">
 						<label for="phone">{l s='Home phone'}</label>
 						<input type="text" class="text form-control validate" name="phone" id="phone"  data-validate="isPhoneNumber" value="{if isset($guestInformations) && isset($guestInformations.phone) && $guestInformations.phone}{$guestInformations.phone}{/if}" />
 					</div>
@@ -233,7 +233,7 @@
 						{l s='Please use another address for invoice'}</label>
 					</div>
 
-					<div id="opc_invoice_address" class="is_customer_param">
+					<div id="opc_invoice_address" class="is_customer_param unvisible">
 						{assign var=stateExist value=false}
 						{assign var=postCodeExist value=false}
 						{assign var='dniExist' value=false}
@@ -245,7 +245,7 @@
 							<input type="text" class="text form-control validate" id="company_invoice" name="company_invoice"  data-validate="isName" value="{if isset($guestInformations) && isset($guestInformations.company_invoice) && $guestInformations.company_invoice}{$guestInformations.company_invoice}{/if}" />
 						</div>
 						{elseif $field_name eq "vat_number"}
-						<div id="vat_number_block_invoice" class="is_customer_param" style="display:none;">
+						<div id="vat_number_block_invoice" class="is_customer_param unvisible" style="display:none;">
 							<div class="form-group">
 								<label for="vat_number_invoice">{l s='VAT number'}{if in_array($field_name, $required_fields)} <sup>*</sup>{/if}</label>
 								<input type="text" class="form-control" id="vat_number_invoice" name="vat_number_invoice" value="{if isset($guestInformations) && isset($guestInformations.vat_number_invoice) && $guestInformations.vat_number_invoice}{$guestInformations.vat_number_invoice}{/if}" />
@@ -274,7 +274,7 @@
 							<input type="text" class="form-control validate" name="address1_invoice" id="address1_invoice" data-validate="isAddress" value="{if isset($guestInformations) && isset($guestInformations.address1_invoice) && isset($guestInformations) && isset($guestInformations.address1_invoice) && $guestInformations.address1_invoice}{$guestInformations.address1_invoice}{/if}" />
 						</div>
 						{elseif $field_name eq "address2"}
-						<div class="form-group{if !in_array($field_name, $required_fields)} is_customer_param{/if}">
+						<div class="form-group{if !in_array($field_name, $required_fields)} is_customer_param unvisible{/if}">
 							<label for="address2_invoice">{l s='Address (Line 2)'}{if in_array($field_name, $required_fields)} <sup>*</sup>{/if}</label>
 							<input type="text" class="form-control address" name="address2_invoice" id="address2_invoice" data-validate="isAddress" value="{if isset($guestInformations) && isset($guestInformations.address2_invoice) && isset($guestInformations) && isset($guestInformations.address2_invoice) && $guestInformations.address2_invoice}{$guestInformations.address2_invoice}{/if}" />
 						</div>
@@ -330,14 +330,14 @@
 							<span class="form_info">{l s='DNI / NIF / NIE'}</span>
 						</div>
 						{/if}
-						<div class="form-group is_customer_param">
+						<div class="form-group is_customer_param unvisible">
 							<label for="other_invoice">{l s='Additional information'}</label>
 							<textarea class="form-control" name="other_invoice" id="other_invoice" cols="26" rows="3"></textarea>
 						</div>
 						{if isset($one_phone_at_least) && $one_phone_at_least}
-							<p class="inline-infos required is_customer_param">{l s='You must register at least one phone number.'}</p>
+							<p class="inline-infos required is_customer_param unvisible">{l s='You must register at least one phone number.'}</p>
 						{/if}
-						<div class="form-group is_customer_param">
+						<div class="form-group is_customer_param unvisible">
 							<label for="phone_invoice">{l s='Home phone'}</label>
 							<input type="text" class="form-control validate" name="phone_invoice" id="phone_invoice" data-validate="isPhoneNumber" value="{if isset($guestInformations) && isset($guestInformations.phone_invoice) && $guestInformations.phone_invoice}{$guestInformations.phone_invoice}{/if}" />
 						</div>
@@ -352,7 +352,7 @@
 						<p class="required opc-required pull-right">
 							<sup>*</sup>{l s='Required field'}
 						</p>
-						<button type="submit" name="submitAccount" id="submitAccount" class="btn btn-default button button-medium"><span>{l s='Next'}<i class="icon-chevron-right right"></i></span></button>
+						<button type="submit" name="submitGuestAccount" id="submitGuestAccount" class="btn btn-default button button-medium"><span>{l s='Next'}<i class="icon-chevron-right right"></i></span></button>
 
 					</div>
 					<!-- <div style="display: none;" id="opc_account_saved" class="alert alert-success">
