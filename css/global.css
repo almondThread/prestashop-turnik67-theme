@@ -5782,7 +5782,7 @@ header {
   position: relative;
   border: 1px solid #d6d4d4;
   border-bottom: none;
-  background: #fbfbfb; }
+  background: #ffffff; }
 
 p.info-title {
   font-weight: bold;
@@ -6193,7 +6193,7 @@ span.exclusive {
   -webkit-box-shadow: none;
   box-shadow: none; }
   .form-control.grey {
-    background: #fbfbfb; }
+    background: #ffffff; }
 
 table.std,
 table.table_block {
@@ -6229,7 +6229,7 @@ table.table_block td {
 .table {
   margin-bottom: 30px; }
   .table > thead > tr > th {
-    background: #fbfbfb;
+    background: #ffffff;
     border-bottom-width: 1px;
     color: #333;
     vertical-align: middle; }
@@ -6239,7 +6239,7 @@ table.table_block td {
     .table td a.color-myaccount:hover {
       text-decoration: none; }
   .table tfoot tr {
-    background: #fbfbfb; }
+    background: #ffffff; }
 
 .product-name {
   font-size: 17px;
@@ -6420,7 +6420,7 @@ table.table_block td {
   top: -1px; }
 
 .box {
-  background: #fbfbfb;
+  background: #ffffff;
   border: 1px solid #d6d4d4;
   padding: 14px 18px 13px;
   margin: 0 0 30px 0;
@@ -6658,7 +6658,7 @@ h3.page-product-heading {
   position: relative;
   border: 1px solid #d6d4d4;
   border-bottom: none;
-  background: #fbfbfb; }
+  background: #ffffff; }
 
 ul.footer_links {
   padding: 20px 0 0px 0;
@@ -6805,7 +6805,7 @@ ul.footer_links {
           border: 1px solid #fff;
           padding: 2px 8px;
           display: block;
-          background: url(../img/pagination-li.gif) 0 0 repeat-x #fbfbfb; }
+          background: url(../img/pagination-li.gif) 0 0 repeat-x #ffffff; }
       .top-pagination-content ul.pagination li > a:hover span,
       .bottom-pagination-content ul.pagination li > a:hover span {
         background: #f6f6f6; }
@@ -7830,11 +7830,11 @@ p.payment_module {
     letter-spacing: -1px;
     position: relative; }
     p.payment_module a.bankwire {
-      background: url(../img/bankwire.png) 15px 12px no-repeat #fbfbfb; }
+      background: url(../img/bankwire.png) 15px 12px no-repeat #ffffff; }
     p.payment_module a.cheque {
-      background: url(../img/cheque.png) 15px 15px no-repeat #fbfbfb; }
+      background: url(../img/cheque.png) 15px 15px no-repeat #ffffff; }
     p.payment_module a.cash {
-      background: url(../img/cash.png) 15px 15px no-repeat #fbfbfb; }
+      background: url(../img/cash.png) 15px 15px no-repeat #ffffff; }
     p.payment_module a.cheque:after, p.payment_module a.bankwire:after, p.payment_module a.cash:after {
       display: block;
       content: "\f054";

@@ -27,7 +27,7 @@
     .thumbs_banner .space-keeper a.prev {
       display: none;
       width: 21px;
-      background: #fbfbfb;
+      background: #ffffff;
       text-decoration: none;
       color: #333; }
       .thumbs_banner .space-keeper a.prev:before {
@@ -40,7 +40,7 @@
       float: left;
       display: block;
       width: 21px;
-      background: #fbfbfb;
+      background: #ffffff;
       text-decoration: none;
       color: #333; }
       .thumbs_banner .space-keeper a.next:before {

@@ -3872,7 +3872,7 @@ td.visible-print {
   display: inline;
   padding: 13px 60px 13px 13px;
   height: 45px;
-  background: #fbfbfb;
+  background: #ffffff;
   margin-right: 1px; }
 
 .ac_results {
@@ -3889,7 +3889,7 @@ td.visible-print {
     .ac_results li.ac_odd {
       background: #fff; }
     .ac_results li:hover, .ac_results li.ac_over {
-      background: #fbfbfb; }
+      background: #ffffff; }
 
 form#searchbox {
   position: relative; }
